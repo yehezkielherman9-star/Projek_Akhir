@@ -74,7 +74,10 @@ def admin_menu():
                 message("Belum ada barang di toko.")
                 continue
 
-            list_text = items.format_item_list(storage.items)
+            list_text = "\n".join([
+                f"{i}. {d['name']} - Rp{d['price']} | Stok: {d.get('stock', 0)}"
+                for i, d in storage.items.items()
+            ])
             inp = prompt_under_list(list_text, "Pilih barang yang diubah:")
             if inp is None:
                 continue

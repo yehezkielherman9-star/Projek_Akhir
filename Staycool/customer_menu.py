@@ -57,7 +57,7 @@ def customer_menu(username):
                 [item_id, d["name"], f"Rp{d['price']}", d.get("stock", 0)]
                 for item_id, d in storage.items.items()
             ]
-            message(make_table(["ID", "Nama", "Harga", "Stok"], rows))
+            print(make_table(["ID", "Nama", "Harga", "Stok"], rows))
 
             # list pilihan
             list_text = "\n".join([
